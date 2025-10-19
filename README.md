@@ -37,29 +37,29 @@ python train_bert_production.py --config config.json
 
 ```bash
 # Install required packages
-pip install torch transformers scikit-learn pandas numpy matplotlib seaborn
-
-# Or install from requirements
 pip install -r requirements.txt
+
+# Verify installation
+python -c "import torch, transformers; print('✅ Installation successful!')"
 ```
 
 ## 📁 Project Structure
 
 ```
-fake_news_detector_bert/
+bert-fake-news-detection/
 ├── README.md                     # This file
 ├── requirements.txt              # Dependencies
 ├── config.json                   # Production training config
 ├── BERT_Training_Colab.ipynb     # Google Colab notebook
 │
 ├── Training Scripts:
-│   ├── train_bert.py             # Original training script
 │   ├── train_bert_minimal.py     # Quick testing (1-2 min)
 │   ├── train_bert_fast.py        # Balanced training (5-10 min)
 │   └── train_bert_production.py  # Full production pipeline
 │
 ├── Evaluation:
-│   └── evaluate_model.py         # Comprehensive evaluation tools
+│   ├── evaluate_model.py         # Comprehensive evaluation tools
+│   └── test_model.py             # Simple testing interface
 │
 └── Models (after training):
     ├── models_bert_minimal/       # Minimal model output
@@ -135,19 +135,28 @@ python train_bert_production.py --resume ./output
 - ✅ Data augmentation
 - ✅ Advanced scheduling
 
-## 🧪 Model Evaluation
+## 🧪 Model Testing
 
-After training, evaluate your models:
+After training, test your models:
 
+### Interactive Testing (Most Fun)
 ```bash
-# Evaluate on test data
-python evaluate_model.py --model_path ./models_bert_fast --test_data ./data/test.csv
-
-# Interactive testing
 python evaluate_model.py --model_path ./models_bert_fast --interactive
+```
 
-# Single prediction
+### Single Prediction
+```bash
 python evaluate_model.py --model_path ./models_bert_fast --text "Your news article here"
+```
+
+### Quick Batch Test
+```bash
+python test_model.py --quick
+```
+
+### Comprehensive Evaluation
+```bash
+python evaluate_model.py --model_path ./models_bert_fast --test_data ./data/test.csv
 ```
 
 **Evaluation Features:**
@@ -256,6 +265,50 @@ Example CSV:
 text,label
 "Scientists have discovered a new planet that could support life.",0
 "BREAKING: Aliens have landed in New York City!",1
+```
+
+## 🚀 Quick Commands
+
+### Setup & Installation
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Check GPU availability
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
+```
+
+### Training Commands
+```bash
+# Quick training (1-2 minutes)
+python train_bert_minimal.py
+
+# Balanced training (5-10 minutes)
+python train_bert_fast.py
+
+# Production training
+python train_bert_production.py --config config.json
+```
+
+### Testing Commands
+```bash
+# Quick batch test
+python test_model.py --quick
+
+# Interactive testing
+python evaluate_model.py --model_path ./models_bert_minimal --interactive
+
+# Single prediction
+python evaluate_model.py --model_path ./models_bert_minimal --text "Your news article here"
+```
+
+### Example Test Articles
+```bash
+# Real news
+python evaluate_model.py --model_path ./models_bert_minimal --text "The Federal Reserve announced a 0.25% interest rate increase today."
+
+# Fake news
+python evaluate_model.py --model_path ./models_bert_minimal --text "BREAKING: Scientists discover chocolate is actually a vegetable!"
 ```
 
 ## 🎨 Visualization Features
