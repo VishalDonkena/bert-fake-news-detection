@@ -209,6 +209,10 @@ datasets/
 *.parquet
 *.feather
 
+# Exception: Keep sample data
+!data/sample_news.csv
+!data/example_*.csv
+
 # Training logs and temporary files
 training.log
 *.log
