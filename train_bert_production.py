@@ -684,7 +684,7 @@ def load_config(config_path):
 def create_default_config():
     """Create default configuration"""
     return {
-        "data_path": "/Users/vishaldonkena/Code/fake_news_detector/data/processed/news.csv",
+        "data_path": "./data/sample_news.csv",
         "output_dir": "./output",
         "model_name": "bert-base-uncased",
         "num_labels": 2,

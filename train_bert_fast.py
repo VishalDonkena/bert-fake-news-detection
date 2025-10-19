@@ -18,8 +18,8 @@ MAX_LENGTH = 128  # Reduced from 256 for faster processing
 BATCH_SIZE = 8  # Reduced batch size for faster processing
 EPOCHS = 1  # Just 1 epoch for quick testing
 LEARNING_RATE = 5e-5  # Higher learning rate for faster convergence
-MODEL_SAVE_PATH = "/Users/vishaldonkena/Code/fake_news_detector_bert/models_bert_fast"
-DATA_PATH = "/Users/vishaldonkena/Code/fake_news_detector/data/processed/news.csv"
+MODEL_SAVE_PATH = "./models_bert_fast"
+DATA_PATH = "./data/sample_news.csv"
 
 # Limit dataset size for faster training
 MAX_SAMPLES = 1000  # Only use first 1000 samples

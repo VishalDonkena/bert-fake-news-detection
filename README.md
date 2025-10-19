@@ -4,13 +4,21 @@ A comprehensive machine learning project for detecting fake news using fine-tune
 
 ## 🚀 Quick Start
 
-### Option 1: Minimal Training (1-2 minutes)
+**🎉 Ready to use immediately! Sample data included - no setup required.**
+
+### Option 1: Super Quick Demo (30 seconds)
+Get started instantly with our guided setup:
+```bash
+python get_started.py
+```
+
+### Option 2: Minimal Training (1-2 minutes)
 Perfect for testing and quick validation:
 ```bash
 python train_bert_minimal.py
 ```
 
-### Option 2: Fast Training (5-10 minutes)
+### Option 3: Fast Training (5-10 minutes)
 Good balance between speed and performance:
 ```bash
 python train_bert_fast.py
@@ -60,6 +68,9 @@ bert-fake-news-detection/
 ├── Evaluation:
 │   ├── evaluate_model.py         # Comprehensive evaluation tools
 │   └── test_model.py             # Simple testing interface
+│
+├── Sample Data:
+│   └── data/sample_news.csv      # 20 example articles (ready to use!)
 │
 └── Models (after training):
     ├── models_bert_minimal/       # Minimal model output
@@ -253,6 +264,8 @@ python evaluate_model.py --model_path ./models_bert_fast --interactive
 
 ## 📚 Data Format
 
+**📊 Sample Data Included!** The repository comes with `data/sample_news.csv` containing 20 example articles (10 real, 10 fake) ready for immediate testing.
+
 Your CSV file should have these columns:
 
 | Column | Description | Example |
@@ -260,18 +273,23 @@ Your CSV file should have these columns:
 | `text` | News article content | "Scientists discover new planet..." |
 | `label` | 0 = Real News, 1 = Fake News | 0 or 1 |
 
-Example CSV:
+Example from included dataset:
 ```csv
 text,label
-"Scientists have discovered a new planet that could support life.",0
-"BREAKING: Aliens have landed in New York City!",1
+"The Federal Reserve announced that interest rates will remain unchanged.",0
+"BREAKING: Aliens confirm they built the pyramids!",1
+"Scientists at MIT develop new solar panel technology.",0
+"You won't believe this ONE WEIRD TRICK doctors hate!",1
 ```
 
 ## 🚀 Quick Commands
 
 ### Setup & Installation
 ```bash
-# Install dependencies
+# Super quick start (includes setup + demo)
+python get_started.py
+
+# Or manual setup:
 pip install -r requirements.txt
 
 # Check GPU availability

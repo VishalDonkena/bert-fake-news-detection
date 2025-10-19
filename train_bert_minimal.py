@@ -17,10 +17,8 @@ MAX_LENGTH = 64  # Very short sequences
 BATCH_SIZE = 4  # Small batch size
 EPOCHS = 1  # Just 1 epoch
 LEARNING_RATE = 3e-4  # Higher learning rate
-MODEL_SAVE_PATH = (
-    "/Users/vishaldonkena/Code/fake_news_detector_bert/models_bert_minimal"
-)
-DATA_PATH = "/Users/vishaldonkena/Code/fake_news_detector/data/processed/news.csv"
+MODEL_SAVE_PATH = "./models_bert_minimal"
+DATA_PATH = "./data/sample_news.csv"
 
 # Ultra small dataset for testing
 MAX_SAMPLES = 100  # Only 100 samples for super fast training
